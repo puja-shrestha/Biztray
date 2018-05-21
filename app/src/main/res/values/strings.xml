@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MobileUI</string>
+
+    <string name="login_with_facebook">Login with Facebook</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="password_not_matched">Password not matched</string>
+    <string name="login">Login</string>
+    <string name="do_you_have_an_account_signup">Do you have an account?</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+</resources>
