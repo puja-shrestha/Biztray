@@ -1,8 +1,10 @@
 package com.example.puza.mobileui.fragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -24,6 +26,7 @@ public class HomeFragment extends Fragment {
     RecyclerView recyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
     HomeRecycler adapter;
+    Context mContext;
     List<HomeItems> allItems;
 
     public HomeFragment() {

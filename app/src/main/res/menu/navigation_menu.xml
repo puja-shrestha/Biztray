@@ -43,7 +43,7 @@
 
     <item android:id="@+id/education_learning"
         android:title="Settings"
-        android:icon="@drawable/delete"/>
+        android:icon="@drawable/ic_action_user"/>
 
     <item android:id="@+id/nav_logout"
         android:title="Log Out"

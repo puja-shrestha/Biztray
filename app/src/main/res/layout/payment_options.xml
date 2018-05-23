@@ -5,17 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include layout="@layout/custom_toolbar" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:layout_marginTop="55dp"
         android:padding="10dp">
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="25dp"
             android:layout_marginRight="5dp"
             android:layout_marginLeft="5dp"
             android:scaleType="fitXY"
@@ -23,59 +26,67 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp">
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:background="#f1f1f1"
+            android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+
+                <EditText
+                    android:id="@+id/textOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="House/Flat/Company No."
+                    android:layout_marginRight="10dp"
+                    android:padding="10dp"
+                    android:layout_weight="3"/>
+
+                <EditText
+                    android:id="@+id/textTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="Postal code"
+                    android:padding="10dp"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
             <EditText
-                android:id="@+id/textOne"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
+                android:id="@+id/textThree"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
                 android:background="@drawable/edit_text_background"
-                android:text="House/Flat/Company No."
-                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
                 android:padding="10dp"
-                android:layout_weight="3"/>
-
+                android:hint="Locality/Area/Sector"/>
             <EditText
-                android:id="@+id/textTwo"
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
+                android:id="@+id/textFour"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
                 android:background="@drawable/edit_text_background"
-                android:text="Postal code"
+                android:layout_marginBottom="25dp"
                 android:padding="10dp"
-                android:layout_weight="1"/>
+                android:hint="Select City"/>
 
+            <Button
+                android:layout_width="260dp"
+                android:layout_height="30dp"
+                android:text="Continue and review Order"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:textSize="12dp"
+                android:textColor="#fff"
+                android:background="@color/colorPrimary"/>
         </LinearLayout>
-        <EditText
-            android:id="@+id/textThree"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/edit_text_background"
-            android:layout_marginBottom="10dp"
-            android:padding="10dp"
-            android:text="Locality/Area/Sector"/>
-        <EditText
-            android:id="@+id/textFour"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/edit_text_background"
-            android:layout_marginBottom="10dp"
-            android:padding="10dp"
-            android:text="Select City"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:text="Continue and review Order"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textAllCaps="false"
-            android:textSize="16dp"
-            android:textColor="#fff"
-            android:background="#00f"/>
 
     </LinearLayout>
 

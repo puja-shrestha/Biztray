@@ -1,7 +1,6 @@
 package com.example.puza.mobileui.fragments;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,7 +14,7 @@ import android.widget.Button;
 import com.example.puza.mobileui.R;
 import com.example.puza.mobileui.adapter.CartRecycler;
 import com.example.puza.mobileui.models.CartItems;
-import com.example.puza.mobileui.ui.PaymentFragment;
+import com.example.puza.mobileui.ui.PaymentActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +27,6 @@ public class CartFragment extends Fragment {
     private RecyclerView.LayoutManager mLayoutManager;
     CartRecycler cartAdapter;
     List<CartItems> cartItems;
-    Context mContext;
     Button button;
 
     public CartFragment() {
@@ -52,7 +50,7 @@ public class CartFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, PaymentFragment.class);
+                Intent intent = new Intent(getContext(), PaymentActivity.class);
                 startActivity(intent);
             }
         });

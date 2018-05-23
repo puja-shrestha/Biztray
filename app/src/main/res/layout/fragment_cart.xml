@@ -127,10 +127,11 @@
             <Button
                 android:id="@+id/continuePayment"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_margin="20dp"
                 android:background="@color/colorPrimary"
                 android:text="Continue Payment"
+                android:textAllCaps="false"
                 android:textColor="@color/colorWhite" />
         </LinearLayout>
 

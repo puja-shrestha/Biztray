@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.puza.mobileui.R;
 
-public class PaymentFragment extends AppCompatActivity {
+public class PaymentActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
