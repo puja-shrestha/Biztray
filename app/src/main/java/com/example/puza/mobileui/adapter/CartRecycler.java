@@ -1,15 +1,21 @@
 package com.example.puza.mobileui.adapter;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.puza.mobileui.R;
 import com.example.puza.mobileui.models.CartItems;
+import com.example.puza.mobileui.ui.MainActivity;
 
 
 import java.util.List;
@@ -18,7 +24,8 @@ public class CartRecycler extends RecyclerView.Adapter<CartRecycler.MyViewHolder
 
     private List<CartItems> itemList;
     Activity context;
-
+    ImageView deleteIcon;
+    AlertDialog myDialog;
 
     public CartRecycler(Activity context, List<CartItems> itemList) {
         this.itemList = itemList;
@@ -39,8 +46,34 @@ public class CartRecycler extends RecyclerView.Adapter<CartRecycler.MyViewHolder
             price = (TextView) view.findViewById(R.id.price);
             image = (ImageView) view.findViewById(R.id.image);
 
+            //delete icon click
+            deleteIcon = (ImageView)view.findViewById(R.id.deleteIcon);
+            deleteIcon.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    //Toast.makeText(context, "icon clicked", Toast.LENGTH_SHORT).show();
+                    Alertdialog();
+                }
+            });
         }
     }
+
+    public void Alertdialog(){
+
+        myDialog = new AlertDialog.Builder(context).create();
+        myDialog.setTitle("Alert");
+        myDialog.setMessage("Are you sure?");
+        myDialog.setButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+
+        myDialog.show();
+    }
+
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

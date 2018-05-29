@@ -1,5 +1,6 @@
 package com.example.puza.mobileui.ui;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -11,8 +12,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.puza.mobileui.R;
 import com.example.puza.mobileui.fragments.CartFragment;
@@ -21,6 +24,8 @@ import com.example.puza.mobileui.fragments.MoreFragment;
 import com.example.puza.mobileui.fragments.OfferFragment;
 import com.example.puza.mobileui.fragments.ProductFragment;
 import com.example.puza.mobileui.helper.BottomNavigationHelper;
+
+import static com.example.puza.mobileui.R.layout.alert_dialog;
 
 public class
 MainActivity extends AppCompatActivity {
@@ -31,9 +36,12 @@ MainActivity extends AppCompatActivity {
     FragmentTransaction transaction;
     Toolbar toolbar;
     TextView toolbarTitle;
+    Dialog myDialog;
+    Button alert, close;
 
     private DrawerLayout mDrawerLayout;
     ImageView imageView;
+    ImageView deleteIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

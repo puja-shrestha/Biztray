@@ -46,6 +46,7 @@ public class CartFragment extends Fragment {
 
         cartRecyclerView.setHasFixedSize(true);
 
+
         button = (Button)view.findViewById(R.id.continuePayment);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

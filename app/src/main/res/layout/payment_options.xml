@@ -11,23 +11,49 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="10dp"
         android:padding="10dp">
 
-        <ImageView
-            android:id="@+id/imageView3"
+        <!--<ImageView-->
+            <!--android:id="@+id/imageView3"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="200dp"-->
+            <!--android:layout_marginBottom="25dp"-->
+            <!--android:layout_marginRight="5dp"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:scaleType="fitXY"-->
+            <!--android:src="@drawable/photo"/>-->
+
+        <android.support.v4.view.ViewPager
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginBottom="25dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginLeft="5dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/photo"/>
+            android:layout_height="260dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/viewPager">
+
+            <LinearLayout
+                android:id="@+id/layoutDots"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dots_height"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/dots_margin_bottom"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:alpha=".5"
+                    android:layout_above="@id/layoutDots"
+                    android:background="@android:color/white" />
+
+            </LinearLayout>
+
+        </android.support.v4.view.ViewPager>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="10dp"
+            android:layout_marginTop="-25dp"
             android:background="#f1f1f1"
             android:orientation="vertical">
 
@@ -87,8 +113,5 @@
                 android:textColor="#fff"
                 android:background="@color/colorPrimary"/>
         </LinearLayout>
-
     </LinearLayout>
-
-
 </FrameLayout>

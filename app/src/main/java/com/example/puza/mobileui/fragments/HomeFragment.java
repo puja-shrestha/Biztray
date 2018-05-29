@@ -67,6 +67,10 @@ public class HomeFragment extends Fragment {
         allItems.add(new HomeItems(R.drawable.two, "Furniture"));
         allItems.add(new HomeItems(R.drawable.one, "Agriculture"));
         allItems.add(new HomeItems(R.drawable.two, "Gems"));
+        allItems.add(new HomeItems(R.drawable.one, "Antiques"));
+        allItems.add(new HomeItems(R.drawable.two, "Furniture"));
+        allItems.add(new HomeItems(R.drawable.one, "Agriculture"));
+        allItems.add(new HomeItems(R.drawable.two, "Gems"));
 
         return allItems;
     }
