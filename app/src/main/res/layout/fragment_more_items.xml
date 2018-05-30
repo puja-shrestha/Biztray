@@ -4,16 +4,31 @@
     android:layout_height="match_parent"
     tools:context="com.example.puza.mobileui.fragments.CartFragment">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:textColor="@color/colorPrimary"
-                android:id="@+id/loading"
-                android:text="Loading..."
-                android:layout_centerInParent="true"/>
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="30sp"-->
+                <!--android:textColor="@color/colorPrimary"-->
+                <!--android:id="@+id/loading"-->
+                <!--android:text="Loading..."-->
+                <!--android:layout_centerInParent="true"/>-->
 
-            <android.support.v7.widget.RecyclerView
+    <!--<ProgressBar-->
+        <!--android:id="@+id/determinateBar"-->
+        <!--style="@android:style/Widget.ProgressBar.Horizontal"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:progress="25"/>-->
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        />
+
+
+    <android.support.v7.widget.RecyclerView
                 android:id="@+id/cartRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

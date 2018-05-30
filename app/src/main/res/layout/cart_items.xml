@@ -11,7 +11,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="140dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="10dp">
@@ -21,7 +21,6 @@
             android:layout_height="60dp"
             android:layout_weight="2"
             android:scaleType="fitCenter"
-            android:layout_marginTop="5dp"
             android:id="@+id/image"
             android:src="@drawable/one" />
 
@@ -32,17 +31,18 @@
             android:layout_weight="7"
             android:gravity="center_vertical"
             android:orientation="vertical"
-            android:layout_marginLeft="10dp">
+            android:layout_marginLeft="5dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Pashmina Arts, made by Nepal Hand"
                 android:textColor="@color/colorBlack"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:id="@+id/name"
                 android:textStyle="bold"
-                android:layout_marginBottom="5dp"/>
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="10dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -59,16 +59,16 @@
                         android:text="Size"
                         android:layout_marginRight="10dp"
                         android:textColor="@color/colorBlack"
-                        android:textSize="11sp"
+                        android:textSize="14sp"
                         android:textStyle="bold"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=":"
                         android:textColor="@color/colorBlack"
-                        android:textSize="11sp"
+                        android:textSize="14sp"
                         android:textStyle="bold"
-                        android:paddingLeft="45dp"/>
+                        android:paddingLeft="46dp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -83,7 +83,7 @@
                         android:id="@+id/size"
                         android:layout_marginLeft="10dp"
                         android:textColor="@color/colorBlack"
-                        android:textSize="11sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
 
@@ -105,7 +105,7 @@
                         android:text="Quantity"
                         android:layout_marginRight="10dp"
                         android:textColor="@color/colorBlack"
-                        android:textSize="11sp"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -113,9 +113,9 @@
                         android:layout_height="wrap_content"
                         android:text=":"
                         android:textColor="@color/colorBlack"
-                        android:textSize="11sp"
+                        android:textSize="14sp"
                         android:textStyle="bold"
-                        android:paddingLeft="30dp"/>
+                        android:paddingLeft="24dp"/>
 
                 </LinearLayout>
 
@@ -132,7 +132,7 @@
                         android:id="@+id/quantity"
                         android:layout_marginLeft="10dp"
                         android:textColor="@color/colorBlack"
-                        android:textSize="11sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -153,16 +153,16 @@
                         android:text="Price"
                         android:layout_marginRight="10dp"
                         android:textColor="@color/colorBlack"
-                        android:textSize="11sp"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=":"
                         android:textColor="@color/colorBlack"
-                        android:textSize="11sp"
+                        android:textSize="14sp"
                         android:textStyle="bold"
-                        android:paddingLeft="42dp"/>
+                        android:paddingLeft="41dp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -178,7 +178,7 @@
                         android:id="@+id/price"
                         android:layout_marginLeft="10dp"
                         android:textColor="@color/colorBlack"
-                        android:textSize="11sp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -187,10 +187,17 @@
 
         <ImageView
             android:id="@+id/deleteIcon"
-            android:layout_width="0dp"
+            android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_weight="1"
             android:layout_marginTop="10dp"
             android:src="@drawable/ic_action_recycle_bin" />
+
+        <!--<ImageView-->
+            <!--android:id="@+id/deleteIcon"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="20dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:src="@drawable/ic_action_recycle_bin" />-->
     </LinearLayout>
 </android.support.v7.widget.CardView>

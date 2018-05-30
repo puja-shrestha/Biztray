@@ -11,8 +11,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.example.puza.mobileui.R;
+import com.example.puza.mobileui._sliders.FragmentSlider;
+import com.example.puza.mobileui._sliders.SliderIndicator;
+import com.example.puza.mobileui._sliders.SliderPagerAdapter;
+import com.example.puza.mobileui._sliders.SliderView;
 import com.example.puza.mobileui.adapter.FeaturedRecycler;
 import com.example.puza.mobileui.adapter.HomeRecycler;
 import com.example.puza.mobileui.adapter.PopularRecycler;
@@ -31,6 +36,14 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class ProductFragment extends Fragment {
+
+    //slider
+    private SliderPagerAdapter mAdapter;
+    private SliderIndicator mIndicator;
+
+    private SliderView sliderView;
+    private LinearLayout mLinearLayout;
+
 
     /*---------------featured items----------------------*/
     RecyclerView featuredRecyclerView;
@@ -56,6 +69,12 @@ public class ProductFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_product, container, false);
+
+        //slider
+        sliderView = (SliderView) view.findViewById(R.id.sliderView);
+        mLinearLayout = (LinearLayout) view.findViewById(R.id.pagesContainer);
+        setupSlider();
+
 
         /*------------------Featured Items--------------------------*/
         featuredRecyclerView = (RecyclerView) view.findViewById(R.id.featuredRecycler);
@@ -95,6 +114,25 @@ public class ProductFragment extends Fragment {
 
         return view;
     }
+
+
+
+    //slider
+    private void setupSlider() {
+        sliderView.setDurationScroll(800);
+        List<Fragment> fragments = new ArrayList<>();
+        fragments.add(FragmentSlider.newInstance("http://www.menucool.com/slider/prod/image-slider-1.jpg"));
+        fragments.add(FragmentSlider.newInstance("http://www.menucool.com/slider/prod/image-slider-2.jpg"));
+        fragments.add(FragmentSlider.newInstance("http://www.menucool.com/slider/prod/image-slider-3.jpg"));
+        fragments.add(FragmentSlider.newInstance("http://www.menucool.com/slider/prod/image-slider-4.jpg"));
+
+        mAdapter = new SliderPagerAdapter(getFragmentManager(), fragments);
+        sliderView.setAdapter(mAdapter);
+        mIndicator = new SliderIndicator(getActivity(), mLinearLayout, sliderView, R.drawable.indicator_circle);
+        mIndicator.setPageCount(fragments.size());
+        mIndicator.show();
+    }
+
 
     private List<FeaturedItems> getFeaturedItems() {
         featuredItems = new ArrayList<FeaturedItems>();

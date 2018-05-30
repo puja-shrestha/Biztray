@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.puza.mobileui.R;
@@ -27,7 +28,8 @@ public class MoreItemsfragment extends Fragment{
     private RecyclerView.LayoutManager mLayoutManager;
     MoreItemsRecycler cartAdapter;
     List<MoreItems> cartItems;
-    private TextView loading;
+    //private TextView loading;
+    ProgressBar mProgressBar;
 
     public MoreItemsfragment() {
         // Required empty public constructor
@@ -41,7 +43,12 @@ public class MoreItemsfragment extends Fragment{
         View view = inflater.inflate(R.layout.fragment_more_items, container, false);
 
         cartRecyclerView = (RecyclerView) view.findViewById(R.id.cartRecyclerView);
-        loading=(TextView)view.findViewById(R.id.loading);
+
+        mProgressBar = (ProgressBar) view.findViewById(R.id.loading);
+        //mProgressBar.setVisibility(View.GONE);
+//        loading=(TextView)view.findViewById(R.id.loading);
+
+
         cartItems = getCartItems();
 
         cartRecyclerView.setHasFixedSize(true);
@@ -59,7 +66,7 @@ public class MoreItemsfragment extends Fragment{
     }
 
     private List<MoreItems> getCartItems() {
-        loading.setVisibility(View.INVISIBLE);
+        mProgressBar.setVisibility(View.INVISIBLE);
         cartRecyclerView.setVisibility(View.VISIBLE);
         cartItems = new ArrayList<MoreItems>();
 
