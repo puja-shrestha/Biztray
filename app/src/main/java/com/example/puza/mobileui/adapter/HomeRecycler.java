@@ -1,17 +1,26 @@
 package com.example.puza.mobileui.adapter;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.puza.mobileui.R;
+import com.example.puza.mobileui.fragments.MoreFragment;
+import com.example.puza.mobileui.fragments.MoreItemsfragment;
 import com.example.puza.mobileui.models.HomeItems;
+import com.example.puza.mobileui.ui.PaymentActivity;
 
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeRecycler extends RecyclerView.Adapter<HomeRecycler.MyViewHolder> {
 
@@ -26,15 +35,30 @@ public class HomeRecycler extends RecyclerView.Adapter<HomeRecycler.MyViewHolder
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView name;
-        private ImageView image;
+        private CircleImageView image;
 
 
         public MyViewHolder(View view) {
             super(view);
 
             name = (TextView) view.findViewById(R.id.name);
-            image = (ImageView) view.findViewById(R.id.image);
 
+            image = (CircleImageView) view.findViewById(R.id.image);
+            image.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+//                    Intent intent = new Intent(context, MoreItemsfragment.class);
+//                    context.startActivity(intent);
+
+                    MoreItemsfragment fragment = new MoreItemsfragment();
+                    FragmentTransaction transaction = ((FragmentActivity)context).getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.frame_container, fragment);
+                    transaction.commit();
+
+//                    Toast.makeText(context, "icon clicked", Toast.LENGTH_SHORT).show();
+                        }
+                    });
         }
     }
 

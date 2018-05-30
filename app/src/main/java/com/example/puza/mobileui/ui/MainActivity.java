@@ -1,6 +1,8 @@
 package com.example.puza.mobileui.ui;
 
 import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -42,6 +44,8 @@ MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     ImageView imageView;
     ImageView deleteIcon;
+    ImageView notificationIcon;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +65,17 @@ MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mDrawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
+
+        notificationIcon = (ImageView)findViewById(R.id.notificationIcon);
+        notificationIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PaymentActivity.class);
+                startActivity(intent);
+                //Toast.makeText(getApplicationContext(), "Notification icon", Toast.LENGTH_SHORT).show();
+
             }
         });
     }

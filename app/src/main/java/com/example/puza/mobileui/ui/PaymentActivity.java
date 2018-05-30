@@ -22,6 +22,7 @@ public class PaymentActivity extends AppCompatActivity {
     List<Integer> color;
     ViewPager viewPager;
     CustomSwipeAdapter adapter;
+
     private LinearLayout dotsLayout;
     private TextView[] dots;
     private int[] layouts;
@@ -32,18 +33,15 @@ public class PaymentActivity extends AppCompatActivity {
         setContentView(R.layout.payment_options);
 
         viewPager = (ViewPager)findViewById(R.id.viewPager);
+
+
         adapter = new CustomSwipeAdapter(this);
         viewPager.setAdapter(adapter);
-
-        color = new ArrayList<>();
-        color.add(Color.RED);
-        color.add(Color.GREEN);
-        color.add(Color.BLUE);
 
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new SliderTimer(), 1000, 2000);
 
-        addBottomDots(0);
+//        addBottomDots(1);
     }
 
     private class SliderTimer extends TimerTask {
@@ -53,34 +51,40 @@ public class PaymentActivity extends AppCompatActivity {
             PaymentActivity.this.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    if (viewPager.getCurrentItem() < color.size() - 1) {
-                        viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
-                    } else {
-                        viewPager.setCurrentItem(0);
-                    }
+//                    if (viewPager.getCurrentItem() < color.size() - 1) {
+//                        viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
+//                    } else {
+//                        viewPager.setCurrentItem(0);
+//                    }
                 }
             });
         }
     }
 
-    private void addBottomDots(int currentPage) {
-        dots = new TextView[layouts.length];
-
-        int[] colorsActive = getResources().getIntArray(R.array.array_dot_active);
-        int[] colorsInactive = getResources().getIntArray(R.array.array_dot_inactive);
-
-        dotsLayout.removeAllViews();
-        for (int i = 0; i < dots.length; i++) {
-            dots[i] = new TextView(this);
-            dots[i].setText(Html.fromHtml("&#8226;"));
-            dots[i].setTextSize(35);
-            dots[i].setTextColor(colorsInactive[currentPage]);
-            dotsLayout.addView(dots[i]);
-        }
-
-        if (dots.length > 0)
-            dots[currentPage].setTextColor(colorsActive[currentPage]);
-    }
+//    private void addBottomDots(int currentPage) {
+//        try{
+//            dots = new TextView[layouts.length];
+//        }catch (Exception e){
+//            e.printStackTrace();
+//
+//        }
+//
+//
+//        int[] colorsActive = getResources().getIntArray(R.array.array_dot_active);
+//        int[] colorsInactive = getResources().getIntArray(R.array.array_dot_inactive);
+//
+//        dotsLayout.removeAllViews();
+//        for (int i = 0; i < dots.length; i++) {
+//            dots[i] = new TextView(this);
+//            dots[i].setText(Html.fromHtml("&#8226;"));
+//            dots[i].setTextSize(35);
+//            dots[i].setTextColor(colorsInactive[currentPage]);
+//            dotsLayout.addView(dots[i]);
+//        }
+//
+//        if (dots.length > 0)
+//            dots[currentPage].setTextColor(colorsActive[currentPage]);
+//    }
 
 
 }
