@@ -29,6 +29,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/coupon"
+                    android:fontFamily="sans-serif"
                     android:gravity="center"
                     android:layout_gravity="center"
                     android:paddingLeft="10dp"
@@ -48,6 +49,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
+                    android:fontFamily="sans-serif"
                     android:textSize="14dp"
                     android:textColor="#b4acac"
                     android:inputType="textPersonName"
@@ -60,6 +62,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#5f44af"
                     android:layout_weight="1"
+                    android:fontFamily="sans-serif"
                     android:text="@string/use"
                     android:background="#fff"/>
             </LinearLayout>
@@ -76,6 +79,7 @@
                     android:layout_gravity="center"
                     android:paddingLeft="10dp"
                     android:textColor="#000"
+                    android:fontFamily="sans-serif"
                     android:textSize="16sp"
                     android:textStyle="bold"/>
             </LinearLayout>
@@ -96,6 +100,7 @@
                         android:text="2 items"
                         android:paddingLeft="10dp"
                         android:textColor="#000"
+                        android:fontFamily="sans-serif"
                         android:textSize="14sp"
                         android:layout_weight="1"/>
                     <TextView
@@ -106,6 +111,7 @@
                         android:textColor="#000"
                         android:textSize="14sp"
                         android:layout_weight="1"
+                        android:fontFamily="sans-serif"
                         android:layout_gravity="end"
                         android:textAlignment="textEnd"
                         android:layout_marginRight="10dp"
@@ -129,6 +135,7 @@
                         android:text="Total"
                         android:paddingLeft="10dp"
                         android:textColor="#000"
+                        android:fontFamily="sans-serif"
                         android:textSize="16sp"
                         android:layout_weight="1"/>
                     <TextView
@@ -138,6 +145,7 @@
                         android:paddingLeft="10dp"
                         android:textColor="#000"
                         android:textSize="16sp"
+                        android:fontFamily="sans-serif"
                         android:layout_weight="1"
                         android:layout_gravity="end"
                         android:textAlignment="textEnd"
@@ -152,6 +160,7 @@
                     android:text="Proceed to checkout"
                     android:background="@color/colorOrange"
                     android:textColor="#fff"
+                    android:fontFamily="sans-serif"
                     android:textStyle="bold"
                     android:layout_marginTop="12dp"
                     android:layout_marginBottom="10dp"/>
@@ -161,6 +170,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Call to order"
+                    android:fontFamily="sans-serif"
                     android:textColor="#605a5a"
                     android:background="@drawable/button_backgroung_rectangle"/>
             </LinearLayout>
@@ -189,6 +199,7 @@
                             android:text="Sub Total"
                             android:textColor="@color/colorBlack"
                             android:textSize="15sp"
+                            android:fontFamily="sans-serif"
                             android:textStyle="bold" />
                     </LinearLayout>
 
@@ -201,6 +212,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text=":"
+                            android:fontFamily="sans-serif"
                             android:textColor="@color/colorBlack"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -215,6 +227,7 @@
                             android:layout_weight="1"
                             android:gravity="right"
                             android:text="$12.97"
+                            android:fontFamily="sans-serif"
                             android:textColor="@color/colorBlack"
                             android:textSize="14sp" />
 
@@ -237,6 +250,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Discount"
+                            android:fontFamily="sans-serif"
                             android:textColor="@color/colorBlack"
                             android:textSize="15sp"
                             android:textStyle="bold" />
@@ -252,6 +266,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text=":"
+                            android:fontFamily="sans-serif"
                             android:textColor="@color/colorBlack"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -269,6 +284,7 @@
                             android:layout_weight="1"
                             android:gravity="right"
                             android:text="$1.00"
+                            android:fontFamily="sans-serif"
                             android:textColor="@color/colorBlack"
                             android:textSize="14sp" />
 
@@ -293,6 +309,7 @@
                             android:text="Delivery Charges"
                             android:textColor="@color/colorBlack"
                             android:textSize="15sp"
+                            android:fontFamily="sans-serif"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -306,6 +323,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text=":"
+                            android:fontFamily="sans-serif"
                             android:textColor="@color/colorBlack"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -322,6 +340,7 @@
                             android:layout_weight="1"
                             android:gravity="right"
                             android:text="$2.00"
+                            android:fontFamily="sans-serif"
                             android:textColor="@color/colorBlack"
                             android:textSize="14sp" />
 
@@ -346,6 +365,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Total"
+                            android:fontFamily="sans-serif"
                             android:textColor="@color/colorBlack"
                             android:textSize="15sp"
                             android:textStyle="bold" />
@@ -361,6 +381,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text=":"
+                            android:fontFamily="sans-serif"
                             android:textColor="@color/colorBlack"
                             android:textSize="14sp"
                             android:textStyle="bold" />
@@ -375,6 +396,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="right"
+                            android:fontFamily="sans-serif"
                             android:text="$6.00"
                             android:textColor="@color/colorBlack"
                             android:textSize="14sp" />
@@ -391,6 +413,7 @@
                     android:background="@color/colorPrimary"
                     android:text="Continue Payment"
                     android:textAllCaps="false"
+                    android:fontFamily="sans-serif"
                     android:textColor="@color/colorWhite" />
             </LinearLayout>
         </LinearLayout>

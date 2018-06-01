@@ -7,6 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="You want to delete??"
+        android:fontFamily="sans-serif"
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"

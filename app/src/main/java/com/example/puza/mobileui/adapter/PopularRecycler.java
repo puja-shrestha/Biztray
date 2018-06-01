@@ -1,9 +1,11 @@
 package com.example.puza.mobileui.adapter;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,15 +15,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.puza.mobileui.R;
+import com.example.puza.mobileui.fragments.MoreItemsfragment;
 import com.example.puza.mobileui.fragments.ShopItemsFragment;
 import com.example.puza.mobileui.models.MostPopularItems;
 
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class PopularRecycler extends RecyclerView.Adapter<PopularRecycler.MyViewHolder> {
 
     private List<MostPopularItems> itemList;
     Activity context;
+    ProgressDialog progressDialog;
 
 
     public PopularRecycler(Activity context, List<MostPopularItems> itemList) {
@@ -43,6 +49,41 @@ public class PopularRecycler extends RecyclerView.Adapter<PopularRecycler.MyView
             image = (ImageView) view.findViewById(R.id.image);
 
             cardView = (CardView) view.findViewById(R.id.dateRecycler);
+
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    progressDialog = new ProgressDialog(context);
+                    progressDialog.setMessage("Loading..."); // Setting Message
+                    progressDialog.setTitle("Please wait"); // Setting Title
+                    progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Spinner
+                    progressDialog.show(); // Display Progress Dialog
+                    progressDialog.setCancelable(false);
+                    new Thread(new Runnable() {
+                        public void run() {
+                            try {
+                                Thread.sleep(2000);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            progressDialog.dismiss();
+                            MoreItemsfragment fragment = new MoreItemsfragment();
+                            FragmentTransaction transaction = ((FragmentActivity) context).getSupportFragmentManager().beginTransaction();
+                            transaction.replace(R.id.frame_container, fragment);
+                            transaction.commit();
+                        }
+                    }).start();
+//                    Intent intent = new Intent(context, BlankActivity.class);
+//                    context.startActivity(intent);
+
+//                    Intent intent = new Intent(context, MoreItemsfragment.class);
+//                    context.startActivity(intent);
+
+
+//                    Toast.makeTextprogressDialog = new ProgressDialog(MainActivity.this);}
+                }
+            });
 
         }
     }

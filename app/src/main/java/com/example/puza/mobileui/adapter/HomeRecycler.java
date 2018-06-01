@@ -1,6 +1,7 @@
 package com.example.puza.mobileui.adapter;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
@@ -8,15 +9,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.puza.mobileui.R;
-import com.example.puza.mobileui.fragments.MoreFragment;
 import com.example.puza.mobileui.fragments.MoreItemsfragment;
 import com.example.puza.mobileui.models.HomeItems;
-import com.example.puza.mobileui.ui.PaymentActivity;
+import com.example.puza.mobileui.ui.BlankActivity;
 
 import java.util.List;
 
@@ -26,6 +27,7 @@ public class HomeRecycler extends RecyclerView.Adapter<HomeRecycler.MyViewHolder
 
     private List<HomeItems> itemList;
     Activity context;
+    ProgressDialog  progressDialog;
 
 
     public HomeRecycler(Activity context, List<HomeItems> itemList) {
@@ -38,27 +40,50 @@ public class HomeRecycler extends RecyclerView.Adapter<HomeRecycler.MyViewHolder
         private CircleImageView image;
 
 
+
+
         public MyViewHolder(View view) {
             super(view);
 
             name = (TextView) view.findViewById(R.id.name);
+            //progressBar = (ProgressBar)  view.findViewById(R.id.progressBar);
 
             image = (CircleImageView) view.findViewById(R.id.image);
             image.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
+                    progressDialog = new ProgressDialog(context);
+                    progressDialog.setMessage("Loading..."); // Setting Message
+                    progressDialog.setTitle("Please wait"); // Setting Title
+                    progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Spinner
+                    progressDialog.show(); // Display Progress Dialog
+                    progressDialog.setCancelable(false);
+                    new Thread(new Runnable() {
+                        public void run() {
+                            try {
+                                Thread.sleep(2000);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            progressDialog.dismiss();
+
+                            MoreItemsfragment fragment = new MoreItemsfragment();
+                            FragmentTransaction transaction = ((FragmentActivity) context).getSupportFragmentManager().beginTransaction();
+                            transaction.replace(R.id.frame_container, fragment);
+                            transaction.commit();
+                        }
+                    }).start();
+//                    Intent intent = new Intent(context, BlankActivity.class);
+//                    context.startActivity(intent);
+
 //                    Intent intent = new Intent(context, MoreItemsfragment.class);
 //                    context.startActivity(intent);
 
-                    MoreItemsfragment fragment = new MoreItemsfragment();
-                    FragmentTransaction transaction = ((FragmentActivity)context).getSupportFragmentManager().beginTransaction();
-                    transaction.replace(R.id.frame_container, fragment);
-                    transaction.commit();
 
-//                    Toast.makeText(context, "icon clicked", Toast.LENGTH_SHORT).show();
-                        }
-                    });
+//                    Toast.makeTextprogressDialog = new ProgressDialog(MainActivity.this);}
+                }
+            });
         }
     }
 

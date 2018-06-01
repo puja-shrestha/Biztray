@@ -43,6 +43,7 @@
                 android:drawableLeft="@drawable/ic_action_facebook"
                 android:drawablePadding="10dp"
                 android:paddingLeft="10dp"
+                android:fontFamily="sans-serif"
                 android:paddingRight="20dp"
                 android:text="@string/login_with_facebook"
                 android:textAllCaps="false"
@@ -59,6 +60,7 @@
                 android:drawablePadding="10dp"
                 android:paddingLeft="10dp"
                 android:paddingRight="20dp"
+                android:fontFamily="sans-serif"
                 android:text="@string/sign_in_with_google"
                 android:textAllCaps="false"
                 android:textColor="@color/colorWhite"
@@ -72,6 +74,7 @@
                 android:layout_marginTop="60dp"
                 android:background="@color/colorPrimary"
                 android:hint="Phone or email"
+                android:fontFamily="sans-serif"
                 android:inputType="text"
                 android:padding="10dp"
                 android:textColorHint="@color/colorWhite" />
@@ -88,6 +91,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@color/colorPrimary"
                 android:hint="Password"
+                android:fontFamily="sans-serif"
                 android:inputType="text"
                 android:padding="10dp"
                 android:textColorHint="@color/colorWhite" />
@@ -103,6 +107,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="20dp"
+                android:fontFamily="sans-serif"
                 android:padding="10dp"
                 android:text="@string/password_not_matched"
                 android:textColor="@color/colorWhite" />
@@ -113,6 +118,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="5dp"
                 android:text="@string/login"
+                android:fontFamily="sans-serif"
                 android:textSize="15sp"
                 android:textAllCaps="false"
                 android:textColor="@color/colorOrange"
@@ -130,6 +136,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/do_you_have_an_account_signup"
                     android:textAlignment="center"
+                    android:fontFamily="sans-serif"
                     android:textColor="@color/colorWhite"
                     android:textSize="15sp" />
 
@@ -138,6 +145,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" Signup"
+                    android:fontFamily="sans-serif"
                     android:textAlignment="center"
                     android:textColor="@color/colorOrange"
                     android:textSize="15sp" />

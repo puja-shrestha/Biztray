@@ -31,6 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Pashmina Arts, Made by Nepal hand"
+                android:fontFamily="sans-serif"
                 android:textSize="16dp"
                 android:textColor="#000"
                 android:layout_marginTop="8dp"
@@ -39,6 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Pashmina Arts, Made by Nepal hand"
+                android:fontFamily="sans-serif"
                 android:textSize="12dp"
                 android:textColor="#000"/>
         </LinearLayout>
@@ -55,6 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="4.5 (17 rating)"
+                android:fontFamily="sans-serif"
                 android:textSize="12dp"
                 android:paddingLeft="10dp"
                 android:textColor="#000"/>
@@ -70,6 +73,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Color:"
+                    android:fontFamily="sans-serif"
                     android:textSize="14dp"
                     android:textColor="#000"
                     android:layout_weight="1"/>
@@ -77,6 +81,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Size: small"
+                    android:fontFamily="sans-serif"
                     android:textSize="14dp"
                     android:textColor="#000"
                     android:layout_weight="1"/>
@@ -93,6 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Product Details"
+                android:fontFamily="sans-serif"
                 android:textSize="16dp"
                 android:textColor="#000"
                 android:layout_marginTop="8dp"
@@ -101,6 +107,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Reference site Reference site about Reference site about,giving information on its origins,giving information on its origins,Reference site about Lorem,giving information on its origins,Reference site about Lorem,giving information on its Product Details."
+                android:fontFamily="sans-serif"
                 android:textSize="12dp"
                 android:textColor="#000"
                 android:layout_marginTop="8dp"
@@ -110,6 +117,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:text="Add to Cart"
+                android:fontFamily="sans-serif"
                 android:layout_gravity="center"
                 android:textColor="#ffff"
                 android:background="@color/colorPrimary"

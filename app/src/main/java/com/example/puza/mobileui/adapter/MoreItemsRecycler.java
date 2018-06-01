@@ -3,6 +3,7 @@ package com.example.puza.mobileui.adapter;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,10 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.example.puza.mobileui.R;
+import com.example.puza.mobileui.fragments.MoreItemsfragment;
 import com.example.puza.mobileui.models.CartItems;
 import com.example.puza.mobileui.models.MoreItems;
+import com.example.puza.mobileui.ui.MainActivity;
 
 import java.util.List;
 
@@ -23,6 +27,8 @@ public class MoreItemsRecycler extends RecyclerView.Adapter<MoreItemsRecycler.My
     Activity context;
     ImageView deleteIcon;
     AlertDialog myDialog;
+
+    TextView textView;
 
     public MoreItemsRecycler(Activity context, List<MoreItems> itemList) {
         this.itemList = itemList;
@@ -70,7 +76,6 @@ public class MoreItemsRecycler extends RecyclerView.Adapter<MoreItemsRecycler.My
 
         myDialog.show();
     }
-
 
     @Override
     public MoreItemsRecycler.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

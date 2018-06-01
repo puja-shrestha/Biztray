@@ -1,15 +1,20 @@
 package com.example.puza.mobileui.fragments;
 
 
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.example.puza.mobileui.R;
@@ -23,6 +28,8 @@ import com.example.puza.mobileui.adapter.PopularRecycler;
 import com.example.puza.mobileui.models.FeaturedItems;
 import com.example.puza.mobileui.models.HomeItems;
 import com.example.puza.mobileui.models.MostPopularItems;
+import com.example.puza.mobileui.ui.GridActivity;
+import com.example.puza.mobileui.ui.PaymentActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +51,10 @@ public class HomeFragment extends Fragment {
 
     private SliderView sliderView;
     private LinearLayout mLinearLayout;
+
+    //button
+    Button mbutton;
+    ProgressDialog progressDialog;
 
 
 
@@ -130,6 +141,35 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(mLayoutManager);
         adapter = new HomeRecycler(getActivity(), allItems);
         recyclerView.setAdapter(adapter);
+
+
+        mbutton= (Button) view.findViewById(R.id.home_button);
+        mbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                progressDialog = new ProgressDialog(getContext());
+                progressDialog.setMessage("Loading..."); // Setting Message
+                progressDialog.setTitle("Please wait"); // Setting Title
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Spinner
+                progressDialog.show(); // Display Progress Dialog
+                progressDialog.setCancelable(false);
+                new Thread(new Runnable() {
+                    public void run() {
+                        try {
+                            Thread.sleep(2000);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        progressDialog.dismiss();
+                        Intent intent = new Intent(getContext(), GridActivity.class);
+                        startActivity(intent);
+                    }
+                }).start();
+
+
+            }
+        });
 
         return view;
     }

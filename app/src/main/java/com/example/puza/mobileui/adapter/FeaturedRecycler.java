@@ -1,9 +1,11 @@
 package com.example.puza.mobileui.adapter;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.puza.mobileui.R;
+import com.example.puza.mobileui.fragments.MoreItemsfragment;
 import com.example.puza.mobileui.fragments.ShopItemsFragment;
 import com.example.puza.mobileui.models.FeaturedItems;
 
@@ -22,7 +25,8 @@ public class FeaturedRecycler extends RecyclerView.Adapter<FeaturedRecycler.MyVi
 
     private List<FeaturedItems> itemList;
     Activity context;
-
+    ProgressDialog  progressDialog;
+    Fragment fragment;
 
     public FeaturedRecycler(Activity context, List<FeaturedItems> itemList) {
         this.itemList = itemList;
@@ -75,11 +79,29 @@ public class FeaturedRecycler extends RecyclerView.Adapter<FeaturedRecycler.MyVi
     }
 
     private void transport(String fragmentName){
-        Fragment fragment = null;
+        fragment = null;
         FragmentManager fragmentManager = ((FragmentActivity)context).getSupportFragmentManager();
 
         switch (fragmentName) {
             case "card":
+
+                progressDialog = new ProgressDialog(context);
+                progressDialog.setMessage("Loading..."); // Setting Message
+                progressDialog.setTitle("Please wait"); // Setting Title
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Spinner
+                progressDialog.show(); // Display Progress Dialog
+                progressDialog.setCancelable(false);
+                new Thread(new Runnable() {
+                    public void run() {
+                        try {
+                            Thread.sleep(2000);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        progressDialog.dismiss();
+                    }
+                }).start();
+
                 fragment = new ShopItemsFragment();
                 break;
         }

@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/image"
         android:textSize="12dp"
+        android:fontFamily="sans-serif"
         android:layout_centerHorizontal="true"
         android:textColor="@color/colorBlack"
         android:textStyle="bold" />
