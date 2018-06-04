@@ -15,19 +15,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.puza.mobileui.R;
 import com.example.puza.mobileui.fragments.CartFragment;
+import com.example.puza.mobileui.fragments.FeaturedSortItemFragment;
 import com.example.puza.mobileui.fragments.HomeFragment;
 import com.example.puza.mobileui.fragments.MoreFragment;
 import com.example.puza.mobileui.fragments.OfferFragment;
 import com.example.puza.mobileui.fragments.ProductFragment;
 import com.example.puza.mobileui.helper.BottomNavigationHelper;
-
-import static com.example.puza.mobileui.R.layout.alert_dialog;
 
 public class
 MainActivity extends AppCompatActivity {
@@ -40,12 +40,15 @@ MainActivity extends AppCompatActivity {
     TextView toolbarTitle;
     Dialog myDialog;
     Button alert, close;
+    ImageView searchIcon;
+    EditText search;
 
     private DrawerLayout mDrawerLayout;
     ImageView imageView;
     ImageView deleteIcon;
     ImageView notificationIcon;
     Context context;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,14 @@ MainActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbarTitle = (TextView) findViewById(R.id.toolbarName);
+        searchIcon = (ImageView) findViewById(R.id.searchIcon);
+        search = (EditText) findViewById(R.id.search);
+        searchIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                search.setVisibility(View.VISIBLE);
+            }
+        });
 
         setSupportActionBar(toolbar);
         setUpBottomNavigation();
@@ -132,7 +143,7 @@ MainActivity extends AppCompatActivity {
                 break;
             case R.id.menu_offer:
                 transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_container, new OfferFragment());
+                transaction.replace(R.id.frame_container, new FeaturedSortItemFragment());
                 toolbarTitle.setText("Offers");
                 break;
             case R.id.menu_cart:

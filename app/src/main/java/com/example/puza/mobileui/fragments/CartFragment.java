@@ -56,6 +56,8 @@ public class CartFragment extends Fragment {
             }
         });
 
+
+
         mLayoutManager = new LinearLayoutManager(
                 getContext(),
                 LinearLayoutManager.VERTICAL,

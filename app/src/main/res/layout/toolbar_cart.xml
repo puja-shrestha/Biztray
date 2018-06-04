@@ -1,49 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="45dp"
+    android:layout_height="?attr/actionBarSize"
     android:background="@color/colorOrange"
     android:orientation="vertical">
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@color/colorOrange" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentRight="true"
         android:orientation="horizontal">
 
-
-        <Button
-            android:id="@+id/button_sortby"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:text="Sort by"
-            android:textAllCaps="false"
-            android:background="@color/colorOrange"
-            android:textColor="#fff"
-            android:textStyle="bold"
-            android:textSize="14dp"
-            android:elevation="-0dp" />
-
-        <ToggleButton
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:id="@+id/toogle_button"
-            android:textOn=""
-            android:background="@drawable/toggle_button"
-            android:textOff=""
-            android:backgroundTint="@color/colorWhite"
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="65dp"
-            />
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/button_sortby"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sort by"
+                android:textAllCaps="false"
+                android:gravity="center"
+                android:background="@color/colorOrange"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:elevation="-0dp" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_action_sort_by"
+                android:paddingLeft="10dp"/>
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <ToggleButton
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/toogle_button"
+                android:textOn=""
+                android:background="@drawable/toggle_button"
+                android:textOff=""
+                android:backgroundTint="@color/colorWhite"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
 
     </LinearLayout>
 

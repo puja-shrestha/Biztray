@@ -14,16 +14,6 @@
         android:layout_marginTop="10dp"
         android:padding="10dp">
 
-        <!--<ImageView-->
-            <!--android:id="@+id/imageView3"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="200dp"-->
-            <!--android:layout_marginBottom="25dp"-->
-            <!--android:layout_marginRight="5dp"-->
-            <!--android:layout_marginLeft="5dp"-->
-            <!--android:scaleType="fitXY"-->
-            <!--android:src="@drawable/photo"/>-->
-
         <android.support.v4.view.ViewPager
             android:layout_width="match_parent"
             android:layout_height="260dp"

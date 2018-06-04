@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.puza.mobileui.R;
-import com.example.puza.mobileui.fragments.MoreItemsfragment;
 import com.example.puza.mobileui.fragments.ShopItemsFragment;
 import com.example.puza.mobileui.models.FeaturedItems;
 
@@ -78,6 +77,7 @@ public class FeaturedRecycler extends RecyclerView.Adapter<FeaturedRecycler.MyVi
         return this.itemList.size();
     }
 
+
     private void transport(String fragmentName){
         fragment = null;
         FragmentManager fragmentManager = ((FragmentActivity)context).getSupportFragmentManager();
@@ -91,6 +91,7 @@ public class FeaturedRecycler extends RecyclerView.Adapter<FeaturedRecycler.MyVi
                 progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Spinner
                 progressDialog.show(); // Display Progress Dialog
                 progressDialog.setCancelable(false);
+
                 new Thread(new Runnable() {
                     public void run() {
                         try {

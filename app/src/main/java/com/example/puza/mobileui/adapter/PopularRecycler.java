@@ -15,13 +15,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.puza.mobileui.R;
-import com.example.puza.mobileui.fragments.MoreItemsfragment;
+
 import com.example.puza.mobileui.fragments.ShopItemsFragment;
 import com.example.puza.mobileui.models.MostPopularItems;
 
 import java.util.List;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class PopularRecycler extends RecyclerView.Adapter<PopularRecycler.MyViewHolder> {
 
@@ -50,40 +48,40 @@ public class PopularRecycler extends RecyclerView.Adapter<PopularRecycler.MyView
 
             cardView = (CardView) view.findViewById(R.id.dateRecycler);
 
-            cardView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    progressDialog = new ProgressDialog(context);
-                    progressDialog.setMessage("Loading..."); // Setting Message
-                    progressDialog.setTitle("Please wait"); // Setting Title
-                    progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Spinner
-                    progressDialog.show(); // Display Progress Dialog
-                    progressDialog.setCancelable(false);
-                    new Thread(new Runnable() {
-                        public void run() {
-                            try {
-                                Thread.sleep(2000);
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                            progressDialog.dismiss();
-                            MoreItemsfragment fragment = new MoreItemsfragment();
-                            FragmentTransaction transaction = ((FragmentActivity) context).getSupportFragmentManager().beginTransaction();
-                            transaction.replace(R.id.frame_container, fragment);
-                            transaction.commit();
-                        }
-                    }).start();
-//                    Intent intent = new Intent(context, BlankActivity.class);
-//                    context.startActivity(intent);
-
-//                    Intent intent = new Intent(context, MoreItemsfragment.class);
-//                    context.startActivity(intent);
-
-
-//                    Toast.makeTextprogressDialog = new ProgressDialog(MainActivity.this);}
-                }
-            });
+//            cardView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//
+//                    progressDialog = new ProgressDialog(context);
+//                    progressDialog.setMessage("Loading..."); // Setting Message
+//                    progressDialog.setTitle("Please wait"); // Setting Title
+//                    progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Spinner
+//                    progressDialog.show(); // Display Progress Dialog
+//                    progressDialog.setCancelable(false);
+//                    new Thread(new Runnable() {
+//                        public void run() {
+//                            try {
+//                                Thread.sleep(2000);
+//                            } catch (Exception e) {
+//                                e.printStackTrace();
+//                            }
+//                            progressDialog.dismiss();
+////                            MoreItemsfragment fragment = new MoreItemsfragment();
+////                            FragmentTransaction transaction = ((FragmentActivity) context).getSupportFragmentManager().beginTransaction();
+////                            transaction.replace(R.id.frame_container, fragment);
+////                            transaction.commit();
+//                        }
+//                    }).start();
+////                    Intent intent = new Intent(context, BlankActivity.class);
+////                    context.startActivity(intent);
+//
+////                    Intent intent = new Intent(context, MoreItemsfragment.class);
+////                    context.startActivity(intent);
+//
+//
+////                    Toast.makeTextprogressDialog = new ProgressDialog(MainActivity.this);}
+//                }
+//            });
 
         }
     }
@@ -123,6 +121,26 @@ public class PopularRecycler extends RecyclerView.Adapter<PopularRecycler.MyView
 
         switch (fragmentName) {
             case "card":
+
+
+                progressDialog = new ProgressDialog(context);
+                progressDialog.setMessage("Loading..."); // Setting Message
+                progressDialog.setTitle("Please wait"); // Setting Title
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Spinner
+                progressDialog.show(); // Display Progress Dialog
+                progressDialog.setCancelable(false);
+
+                new Thread(new Runnable() {
+                    public void run() {
+                        try {
+                            Thread.sleep(2000);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        progressDialog.dismiss();
+                    }
+                }).start();
+
                 fragment = new ShopItemsFragment();
                 break;
         }

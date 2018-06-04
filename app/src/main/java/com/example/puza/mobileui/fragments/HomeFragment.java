@@ -22,10 +22,12 @@ import com.example.puza.mobileui._sliders.FragmentSlider;
 import com.example.puza.mobileui._sliders.SliderIndicator;
 import com.example.puza.mobileui._sliders.SliderPagerAdapter;
 import com.example.puza.mobileui._sliders.SliderView;
+import com.example.puza.mobileui.adapter.FeatureItemRecycler;
 import com.example.puza.mobileui.adapter.FeaturedRecycler;
 import com.example.puza.mobileui.adapter.HomeRecycler;
 import com.example.puza.mobileui.adapter.PopularRecycler;
 import com.example.puza.mobileui.models.FeaturedItems;
+import com.example.puza.mobileui.models.FeaturedSortItems;
 import com.example.puza.mobileui.models.HomeItems;
 import com.example.puza.mobileui.models.MostPopularItems;
 import com.example.puza.mobileui.ui.GridActivity;
@@ -72,6 +74,12 @@ public class HomeFragment extends Fragment {
     PopularRecycler popularAdapter;
     List<MostPopularItems> popularItems;
     /*---------------------------------------------------*/
+
+    //featured sort item
+    RecyclerView featuredSortRecycler;
+    private  RecyclerView.LayoutManager fsLayoutManager;
+    FeatureItemRecycler featureItemRecycler;
+    List<FeaturedSortItems> featuredSortItems;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -126,7 +134,23 @@ public class HomeFragment extends Fragment {
         popularRecyclerView.setAdapter(popularAdapter);
         /*------------------------------------------------------------*/
 
+        /*--------------------------featured sort item----------------------------------*/
+        featuredSortRecycler = (RecyclerView) view.findViewById(R.id.featuredSortItemRecycler);
+        featuredSortItems = getFeaturedSortItems();
+        featuredSortRecycler.setHasFixedSize(true);
 
+        fsLayoutManager = new LinearLayoutManager(
+                getContext(),
+                LinearLayoutManager.VERTICAL,
+                false
+        );
+        featuredSortRecycler.setLayoutManager(fsLayoutManager);
+        featureItemRecycler = new FeatureItemRecycler(getActivity(), featuredSortItems);
+        featuredSortRecycler.setAdapter(featureItemRecycler);
+        /*------------------------------------------------------------*/
+
+
+        /*-----------------------Circle image-------------------------------------*/
         recyclerView = (RecyclerView) view.findViewById(R.id.homeRecycler);
 
         allItems = getAllItemList();
@@ -141,6 +165,8 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(mLayoutManager);
         adapter = new HomeRecycler(getActivity(), allItems);
         recyclerView.setAdapter(adapter);
+        /*------------------------------------------------------------*/
+
 
 
         mbutton= (Button) view.findViewById(R.id.home_button);
@@ -166,8 +192,6 @@ public class HomeFragment extends Fragment {
                         startActivity(intent);
                     }
                 }).start();
-
-
             }
         });
 
@@ -235,4 +259,26 @@ public class HomeFragment extends Fragment {
 
         return popularItems;
     }
+
+    private List<FeaturedSortItems> getFeaturedSortItems() {
+        featuredSortItems = new ArrayList<FeaturedSortItems>();
+
+
+        featuredSortItems.add(new FeaturedSortItems(R.drawable.one, "Decorative art", "Decoration", "Rs. 3,400"));
+        featuredSortItems.add(new FeaturedSortItems(R.drawable.two, "Decorative art", "Decoration", "Rs. 1700"));
+        featuredSortItems.add(new FeaturedSortItems(R.drawable.one, "Decorative art", "Decoration", "Rs. 1200"));
+
+        featuredSortItems.add(new FeaturedSortItems(R.drawable.one, "Decorative art", "Decoration", "Rs. 3,400"));
+        featuredSortItems.add(new FeaturedSortItems(R.drawable.two, "Decorative art", "Decoration", "Rs. 1700"));
+        featuredSortItems.add(new FeaturedSortItems(R.drawable.one, "Decorative art", "Decoration", "Rs. 1200"));
+
+
+        featuredSortItems.add(new FeaturedSortItems(R.drawable.one, "Decorative art", "Decoration", "Rs. 3,400"));
+        featuredSortItems.add(new FeaturedSortItems(R.drawable.two, "Decorative art", "Decoration", "Rs. 1700"));
+        featuredSortItems.add(new FeaturedSortItems(R.drawable.one, "Decorative art", "Decoration", "Rs. 1200"));
+
+
+        return featuredSortItems;
+    }
+
 }

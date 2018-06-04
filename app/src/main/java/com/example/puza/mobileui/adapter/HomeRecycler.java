@@ -2,22 +2,17 @@ package com.example.puza.mobileui.adapter;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.puza.mobileui.R;
-import com.example.puza.mobileui.fragments.MoreItemsfragment;
+import com.example.puza.mobileui.fragments.FeaturedSortItemFragment;
 import com.example.puza.mobileui.models.HomeItems;
-import com.example.puza.mobileui.ui.BlankActivity;
 
 import java.util.List;
 
@@ -68,7 +63,7 @@ public class HomeRecycler extends RecyclerView.Adapter<HomeRecycler.MyViewHolder
                             }
                             progressDialog.dismiss();
 
-                            MoreItemsfragment fragment = new MoreItemsfragment();
+                            FeaturedSortItemFragment fragment = new FeaturedSortItemFragment();
                             FragmentTransaction transaction = ((FragmentActivity) context).getSupportFragmentManager().beginTransaction();
                             transaction.replace(R.id.frame_container, fragment);
                             transaction.commit();
