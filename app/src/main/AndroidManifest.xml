@@ -21,7 +21,6 @@
         </activity>
         <activity android:name=".ui.PaymentActivity" />
         <activity android:name=".ui.NotificationActivity" />
-        <activity android:name=".ui.BlankActivity"></activity>
         <activity android:name=".ui.GridActivity"></activity>
 
     </application>

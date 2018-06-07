@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardElevation="4dp"
-    android:layout_margin="5dp"
+    app:cardElevation="2dp"
+    android:layout_margin="2dp"
     app:cardBackgroundColor="@color/colorWhite"
     android:foreground="?attr/selectableItemBackground"
     android:clickable="true">
@@ -14,7 +14,7 @@
         android:layout_height="140dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="5dp">
 
         <ImageView
             android:layout_width="0dp"
@@ -23,7 +23,6 @@
             android:scaleType="fitCenter"
             android:id="@+id/image"
             android:src="@drawable/one" />
-
 
         <LinearLayout
             android:layout_width="0dp"
@@ -38,7 +37,8 @@
                 android:layout_height="wrap_content"
                 android:text="Pashmina Arts, made by Nepal Hand"
                 android:textColor="@color/colorBlack"
-                android:textSize="16sp"
+                android:textSize="@dimen/small_sixteen_text_size"
+                android:fontFamily="@font/sans"
                 android:id="@+id/name"
                 android:textStyle="bold"
                 android:layout_marginTop="8dp"
@@ -57,16 +57,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Size"
+                        android:fontFamily="@font/sans"
+                        android:textSize="@dimen/small_text_size"
                         android:layout_marginRight="10dp"
                         android:textColor="@color/colorBlack"
-                        android:textSize="14sp"
                         android:textStyle="bold"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=":"
                         android:textColor="@color/colorBlack"
-                        android:textSize="14sp"
+                        android:fontFamily="@font/sans"
+                        android:textSize="@dimen/small_text_size"
                         android:textStyle="bold"
                         android:paddingLeft="46dp"/>
                 </LinearLayout>
@@ -83,7 +85,8 @@
                         android:id="@+id/size"
                         android:layout_marginLeft="10dp"
                         android:textColor="@color/colorBlack"
-                        android:textSize="14sp" />
+                        android:fontFamily="@font/sans"
+                        android:textSize="@dimen/small_text_size" />
                 </LinearLayout>
 
 
@@ -105,7 +108,8 @@
                         android:text="Quantity"
                         android:layout_marginRight="10dp"
                         android:textColor="@color/colorBlack"
-                        android:textSize="14sp"
+                        android:fontFamily="@font/sans"
+                        android:textSize="@dimen/small_text_size"
                         android:textStyle="bold" />
 
                     <TextView
@@ -113,9 +117,10 @@
                         android:layout_height="wrap_content"
                         android:text=":"
                         android:textColor="@color/colorBlack"
-                        android:textSize="14sp"
+                        android:fontFamily="@font/sans"
+                        android:textSize="@dimen/small_text_size"
                         android:textStyle="bold"
-                        android:paddingLeft="24dp"/>
+                        android:paddingLeft="20dp"/>
 
                 </LinearLayout>
 
@@ -132,7 +137,9 @@
                         android:id="@+id/quantity"
                         android:layout_marginLeft="10dp"
                         android:textColor="@color/colorBlack"
-                        android:textSize="14sp" />
+                        android:fontFamily="@font/sans"
+                        android:textSize="@dimen/small_text_size" />
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -153,14 +160,16 @@
                         android:text="Price"
                         android:layout_marginRight="10dp"
                         android:textColor="@color/colorBlack"
-                        android:textSize="14sp"
+                        android:fontFamily="@font/sans"
+                        android:textSize="@dimen/small_text_size"
                         android:textStyle="bold" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=":"
                         android:textColor="@color/colorBlack"
-                        android:textSize="14sp"
+                        android:fontFamily="@font/sans"
+                        android:textSize="@dimen/small_text_size"
                         android:textStyle="bold"
                         android:paddingLeft="41dp"/>
                 </LinearLayout>
@@ -178,7 +187,8 @@
                         android:id="@+id/price"
                         android:layout_marginLeft="10dp"
                         android:textColor="@color/colorBlack"
-                        android:textSize="14sp" />
+                        android:fontFamily="@font/sans"
+                        android:textSize="@dimen/small_text_size" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -189,9 +199,9 @@
             android:id="@+id/deleteIcon"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="20dp"
             android:src="@drawable/ic_action_recycle_bin" />
-
         <!--<ImageView-->
             <!--android:id="@+id/deleteIcon"-->
             <!--android:layout_width="0dp"-->

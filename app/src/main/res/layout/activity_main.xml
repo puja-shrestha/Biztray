@@ -5,21 +5,26 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.MainActivity"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
     android:id="@+id/drawerLayout">
 
-    <android.support.design.widget.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        app:menu="@menu/navigation_menu"
-        android:layout_gravity="start"
-        app:itemTextColor="#fff"
-        app:itemIconTint="#fff"
 
-        android:background="@color/colorPrimary"
-        android:foreground="?attr/selectableItemBackground"
-        android:clickable="true">
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:menu="@menu/navigation_menu"
+            app:headerLayout="@layout/nav_header_main"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:itemTextColor="#fff"
+            app:itemIconTint="#fff"
+            android:background="@color/colorPrimary"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true">
 
-    </android.support.design.widget.NavigationView>
+        </android.support.design.widget.NavigationView>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -31,6 +36,7 @@
             android:orientation="vertical">
 
             <include layout="@layout/custom_toolbar" />
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

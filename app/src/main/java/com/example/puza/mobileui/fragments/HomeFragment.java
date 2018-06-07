@@ -6,9 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -22,7 +19,7 @@ import com.example.puza.mobileui._sliders.FragmentSlider;
 import com.example.puza.mobileui._sliders.SliderIndicator;
 import com.example.puza.mobileui._sliders.SliderPagerAdapter;
 import com.example.puza.mobileui._sliders.SliderView;
-import com.example.puza.mobileui.adapter.FeatureItemRecycler;
+import com.example.puza.mobileui.adapter.FeatureSortItemRecycler;
 import com.example.puza.mobileui.adapter.FeaturedRecycler;
 import com.example.puza.mobileui.adapter.HomeRecycler;
 import com.example.puza.mobileui.adapter.PopularRecycler;
@@ -31,7 +28,6 @@ import com.example.puza.mobileui.models.FeaturedSortItems;
 import com.example.puza.mobileui.models.HomeItems;
 import com.example.puza.mobileui.models.MostPopularItems;
 import com.example.puza.mobileui.ui.GridActivity;
-import com.example.puza.mobileui.ui.PaymentActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,7 +74,7 @@ public class HomeFragment extends Fragment {
     //featured sort item
     RecyclerView featuredSortRecycler;
     private  RecyclerView.LayoutManager fsLayoutManager;
-    FeatureItemRecycler featureItemRecycler;
+    FeatureSortItemRecycler featureSortItemRecycler;
     List<FeaturedSortItems> featuredSortItems;
 
     public HomeFragment() {
@@ -145,8 +141,8 @@ public class HomeFragment extends Fragment {
                 false
         );
         featuredSortRecycler.setLayoutManager(fsLayoutManager);
-        featureItemRecycler = new FeatureItemRecycler(getActivity(), featuredSortItems);
-        featuredSortRecycler.setAdapter(featureItemRecycler);
+        featureSortItemRecycler = new FeatureSortItemRecycler(getActivity(), featuredSortItems);
+        featuredSortRecycler.setAdapter(featureSortItemRecycler);
         /*------------------------------------------------------------*/
 
 

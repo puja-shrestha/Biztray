@@ -53,7 +53,7 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHold
     public void onBindViewHolder(final AlbumsAdapter.MyViewHolder holder, int position) {
         Album album = albumList.get(position);
         holder.title.setText(album.getName());
-        holder.count.setText(album.getNumOfSongs() + " songs");
+        holder.count.setText(album.getNumOfSongs() + "Piece");
 
         //locating album cover using glide library
         Glide.with(mContext).load(album.getThumbnail()).into(holder.thumbnail);

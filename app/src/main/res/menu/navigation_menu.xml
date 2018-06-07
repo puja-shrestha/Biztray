@@ -52,4 +52,19 @@
     <item android:id="@+id/others"
         android:title="MORE OPTIONS"/>
 
+    <item android:id="@+id/e"
+        android:title="Travel and Trekking"
+        android:icon="@drawable/ic_action_backpack"
+        />
+    <item android:id="@+id/d"
+        android:title="Electronics"
+        android:icon="@drawable/ic_action_user"/>
+
+    <item android:id="@+id/c"
+        android:title="Settings"
+        android:icon="@drawable/ic_action_user"/>
+
+    <item android:id="@+id/b"
+        android:title="Log Out"
+        android:icon="@drawable/ic_action_cart"/>
 </menu>

@@ -18,7 +18,7 @@
 
        <ImageView
            android:layout_width="match_parent"
-           android:layout_height="wrap_content"
+           android:layout_height="240dp"
            android:src="@drawable/a1"
            android:scaleType="fitXY"
            android:paddingTop="10dp"
@@ -31,8 +31,8 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#d9d4d4"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"/>
 
         <LinearLayout
@@ -52,11 +52,11 @@
                     android:layout_height="0dp"
                     android:text="Decorative art"
                     android:textColor="@color/colorBlack"
-                    android:textSize="18sp"
+                    android:textSize="@dimen/medium_text_size"
                     android:layout_weight="1"
                     android:id="@+id/heading"
                     android:textStyle="bold"
-                    android:fontFamily="sans-serif"
+                    android:fontFamily="@font/sans"
                     />
 
                 <TextView
@@ -65,21 +65,42 @@
                     android:layout_weight="1"
                     android:textColor="#d2cfcf"
                     android:id="@+id/subHeading"
-                    android:fontFamily="sans-serif"
+                    android:fontFamily="@font/sans"
                     android:text="Decoration"
-                    android:textSize="10sp"
+                    android:textSize="@dimen/very_small_text_size"
                     android:textStyle="bold"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:text="Rs. 22,000"
                     android:textColor="@color/colorBlack"
-                    android:fontFamily="sans-serif"
-                    android:textSize="15sp"
+                    android:fontFamily="@font/sans"
+                    android:textSize="@dimen/small_sixteen_text_size"
                     android:layout_weight="1"
                     android:id="@+id/price"
                     android:textStyle="bold"
                     />
+
+                <!--<RatingBar-->
+                    <!--android:id="@+id/ratingBar"-->
+                    <!--android:stepSize="0.5"-->
+                    <!--android:numStars="5"-->
+                    <!--android:rating="2.5"-->
+                    <!--style = "?android:attr/ratingBarStyleSmall"-->
+                    <!--android:progressTint="@color/colorOrange"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginBottom="10dp"/>-->
+
+                <RatingBar
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:id="@+id/ratingBar"
+                    android:rating="3.5"
+                    android:numStars="5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:progressTint="@color/colorOrange"
+                    android:layout_marginTop="10dp"/>
 
             </LinearLayout>
 
@@ -92,25 +113,27 @@
 
                     <TextView
                         android:id="@+id/button2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="40dp"
+                        android:layout_height="35dp"
                         android:padding="6dp"
                         android:layout_marginLeft="40dp"
-                        android:layout_marginRight="40dp"
+                        android:layout_marginTop="5dp"
                         android:background="@color/colorOrange"
                         android:textColor="@color/colorWhite"
-                        android:text="-30%"
-                        android:textSize="16sp"
+                        android:text="-30"
+                        android:fontFamily="@font/sans"
+                        android:textSize="@dimen/small_sixteen_text_size"
                         android:gravity="center"
                         android:layout_gravity="center" />
 
                     <ImageView
                         android:id="@+id/deleteIcon"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:layout_weight="1"
-                        android:layout_marginTop="10dp"
-                        android:src="@drawable/like"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="40dp"
+                        android:src="@drawable/ic_action_like_grey"
                         android:layout_marginBottom="20dp"
                         android:layout_gravity="center"/>
 

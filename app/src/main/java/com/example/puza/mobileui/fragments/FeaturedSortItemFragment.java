@@ -3,25 +3,20 @@ package com.example.puza.mobileui.fragments;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import com.example.puza.mobileui.R;
 import com.example.puza.mobileui.adapter.DecorativeItemRecycler;
-import com.example.puza.mobileui.adapter.FeatureItemRecycler;
+import com.example.puza.mobileui.adapter.FeatureSortItemRecycler;
 import com.example.puza.mobileui.models.FeaturedSortItems;
-import com.example.puza.mobileui.ui.PaymentActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +24,7 @@ import java.util.List;
 public class FeaturedSortItemFragment extends Fragment {
     RecyclerView featureSortItemRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
-    FeatureItemRecycler featureItemAdapter;
+    FeatureSortItemRecycler featureItemAdapter;
     DecorativeItemRecycler decorativeItemRecycler;
     List<FeaturedSortItems> featuredSortItems;
 
@@ -84,7 +79,7 @@ public class FeaturedSortItemFragment extends Fragment {
                 false
         );
         featureSortItemRecyclerView.setLayoutManager(mLayoutManager);
-        featureItemAdapter = new FeatureItemRecycler(getActivity(), featuredSortItems);
+        featureItemAdapter = new FeatureSortItemRecycler(getActivity(), featuredSortItems);
         featureSortItemRecyclerView.setAdapter(featureItemAdapter);
 
         sbutton = (TextView) view.findViewById(R.id.button_sortby);
@@ -187,7 +182,7 @@ public class FeaturedSortItemFragment extends Fragment {
                     false
             );
             featureSortItemRecyclerView.setLayoutManager(mLayoutManager);
-            featureItemAdapter = new FeatureItemRecycler(getActivity(), featuredSortItems);
+            featureItemAdapter = new FeatureSortItemRecycler(getActivity(), featuredSortItems);
             featureSortItemRecyclerView.setAdapter(featureItemAdapter);        }
     }
 
